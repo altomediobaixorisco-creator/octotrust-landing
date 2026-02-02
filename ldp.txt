@@ -1,0 +1,175 @@
+octotrust-landing/
+│
+├── index.html
+├── css/
+│   ├── style.css
+│   └── animations.css
+│
+├── js/
+│   ├── i18n.js
+│   ├── simulator.js
+│   ├── countdown.js
+│   ├── tracking.js
+│
+├── assets/
+│   └── logo-octotrust.png
+│
+└── legal/
+    ├── termos.html
+    └── disclaimer.html
+:root {
+  --bg-dark: #0b0f14;
+  --bg-card: #121826;
+  --red-main: #ff2e2e;
+  --red-soft: #ff4d4d;
+  --text-main: #e6e6e6;
+  --text-muted: #9ca3af;
+}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>OctoTrust – Infraestrutura Web3 de Rendimento Real</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="OctoTrust – Rendimento auditável na blockchain. ROI real, contratos públicos, infraestrutura DeFi.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Tracking -->
+  <script src="js/tracking.js"></script>
+</head>
+
+<body>
+
+<header class="top">
+  <img src="assets/logo-octotrust.png" class="logo">
+  <nav>
+    <select id="langSwitcher">
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+    </select>
+    <a href="#plans">Planos</a>
+    <a href="#simulator">Simulador</a>
+    <a href="https://t.me/AltoMedioBaixoRisco" target="_blank">Telegram</a>
+  </nav>
+</header>
+
+<section class="hero fade-in">
+  <h1>Liquidez Real. Lucro Transparente.</h1>
+  <p>Infraestrutura Web3 descentralizada na BNB Smart Chain (BEP-20)</p>
+
+  <a class="btn-primary" target="_blank"
+     href="https://www.octotrust.io/invite/0x2B09f00E2E78D4a93D2C7217D99d32dF15a0A946">
+     Criar Conta Agora
+  </a>
+
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<section class="video">
+  <iframe src="https://www.youtube.com/embed/P02yrIwym-o"
+          allowfullscreen></iframe>
+</section>
+<section id="plans" class="cards">
+
+<table>
+<tr>
+<th>Plano</th><th>Investimento</th><th>Ciclo</th><th>ROI Total</th><th>Comissões</th>
+</tr>
+
+<tr>
+<td>Trial</td><td>$5 – $50</td><td>1 dia</td><td>0.40%</td><td>Não</td>
+</tr>
+
+<tr>
+<td>Starter</td><td>$5 – $50</td><td>3 dias</td><td>4.11%</td><td>Não</td>
+</tr>
+
+<tr>
+<td>Weekly</td><td>$15 – $100</td><td>7 dias</td><td>9.43%</td><td>Não</td>
+</tr>
+
+<tr>
+<td>Turbo</td><td>$50 – $5.000</td><td>15 dias</td><td>42.77%</td><td>Sim</td>
+</tr>
+
+<tr>
+<td>Zenith</td><td>$100 – $20.000</td><td>30 dias</td><td>99.99%</td><td>Sim</td>
+</tr>
+</table>
+
+</section>
+<section id="simulator">
+  <h2>Simulador de Rendimento</h2>
+
+  <select id="plan">
+    <option value="0.004">Trial</option>
+    <option value="0.0411">Starter</option>
+    <option value="0.0943">Weekly</option>
+    <option value="0.4277">Turbo</option>
+    <option value="0.9999">Zenith</option>
+  </select>
+
+  <input type="number" id="amount" placeholder="Valor investido ($)">
+  <button onclick="simulate()">Simular</button>
+
+  <p id="result"></p>
+</section>
+function simulate() {
+  const roi = document.getElementById("plan").value;
+  const amount = document.getElementById("amount").value;
+  document.getElementById("result").innerText =
+    `Retorno estimado: $${(amount * roi).toFixed(2)}`;
+}
+<section class="contracts">
+<h2>Contratos Públicos Auditáveis</h2>
+
+<ul>
+<li>
+<strong>Contract A – Liquidity Vault:</strong>
+<a href="https://bscscan.com/address/0x4e0ac0483b273c61Ae26D7Fb7e7A3ca8DA83FB18" target="_blank">
+Ver no BscScan
+</a>
+</li>
+
+<li>
+<strong>Contract B – Smart Harvester:</strong>
+<a href="https://bscscan.com/address/0x46Cf1cF8c69595804ba91dFdd8d6b960c9B0a7C4" target="_blank">
+Ver no BscScan
+</a>
+</li>
+</ul>
+</section>
+<a class="btn-secondary" target="_blank"
+href="https://drive.google.com/drive/folders/1mtdmi8wmaCRemAc6lrziIxWNlfHh7kX1">
+Baixar PDF & Materiais
+</a>
+<section class="risk">
+<h2>Riscos & Compliance</h2>
+<p>
+Ativos digitais envolvem riscos. Rendimentos passados não garantem retornos futuros.
+A OctoTrust opera via contratos imutáveis e auditáveis, porém oscilações de mercado
+e falhas sistêmicas podem ocorrer.
+</p>
+</section>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+
+<!-- Meta Pixel -->
+<script>
+fbq('init', 'PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<footer>
+<a href="legal/termos.html">Termos</a> |
+<a href="legal/disclaimer.html">Disclaimer</a>
+</footer>
